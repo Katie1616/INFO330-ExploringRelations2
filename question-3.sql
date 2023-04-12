@@ -1,1 +1,2 @@
 -- Provide a query that includes the purchased track name AND artist name with each invoice line item.
+select invoice_items.invoiceID, tracks.TrackID, tracks.name from invoice_items, tracks where tracks.trackID = invoice_items.trackID;
