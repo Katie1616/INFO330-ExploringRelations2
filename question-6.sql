@@ -1,1 +1,2 @@
 -- Find tracks (id, name and composer) that are part of a line in an invoice.
+ select tracks.TrackID, tracks.name, tracks.composer from invoice_items, tracks where tracks.trackID = invoice_items.trackID;
