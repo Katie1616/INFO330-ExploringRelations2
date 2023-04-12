@@ -1,2 +1,2 @@
 -- Which sales agent made the most in sales in 2010?
-select employees.firstname, employees.lastname from employees LEFT OUTER JOIN customers ON invoices where invoices.customerID = customers.customerID and employees.employeeID = customers.suppportRepId and invoices.InvoiceDate like '%2010%' and invoices.total = (select max(invoices.total) from invoices);
+select employees.firstname, employees.lastname, invoices.total from employees, customers, invoices where invoices.customerID = customers.customerID and invoices.InvoiceDate like '%2010%' group by employees.firstname;
